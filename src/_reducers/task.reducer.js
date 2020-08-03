@@ -1,6 +1,5 @@
 import { taskConstants } from '../_constants';
 
-
 const initialState = {
   loading: false,
   items: [],
@@ -36,7 +35,6 @@ export function tasks(state = initialState, action) {
       return {
         ...state,
         loading:true,
-
       };
     case taskConstants.DELETE_SUCCESS:
       return {
@@ -49,13 +47,11 @@ export function tasks(state = initialState, action) {
         loading:false,
       };
     case taskConstants.GETBYID_REQUEST:
-      
       return {
         ...state,
         loading: true
       };
     case taskConstants.GETBYID_SUCCESS:
-      
       return {
         ...state,
         loading:false,
@@ -64,11 +60,9 @@ export function tasks(state = initialState, action) {
     case taskConstants.GETBYID_FAILURE:
       return {
         ...state,
-        
       };
       //save
       case taskConstants.SAVE_REQUEST:
-      
       return {
         ...state,
         loading: true
@@ -82,10 +76,8 @@ export function tasks(state = initialState, action) {
     case taskConstants.SAVE_FAILURE:
       return {
         ...state,
-       
       };
     case taskConstants.SHOW_MODAL:
-      
       return {
         ...state,
         showModal: action.showModal

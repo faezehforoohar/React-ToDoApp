@@ -48,7 +48,7 @@ function save(task) {
         dispatch(request(task));
         taskService.save(task)
             .then(
-                user => {
+                task => {
                     dispatch(success());
                     dispatch(alertActions.success(`ثبت اطلاعات با موفقیت انجام شد.`));
 
@@ -63,8 +63,8 @@ function save(task) {
             );
     };
 
-    function request(user) { return { type: taskConstants.SAVE_REQUEST, user } }
-    function success(user) { return { type: taskConstants.SAVE_SUCCESS, user } }
+    function request(task) { return { type: taskConstants.SAVE_REQUEST, task } }
+    function success(task) { return { type: taskConstants.SAVE_SUCCESS, task } }
     function failure(error) { return { type: taskConstants.SAVE_FAILURE, error } }
 }
 
